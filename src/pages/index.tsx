@@ -17,9 +17,13 @@ interface TProps {
   buttonText: string,
 }
 
+const height = {
+  height: 300,
+}
+
 const Banner = ({ imageUrl, purpose, title1, title2, desc1, desc2, linkName, buttonText }: TProps) => (
   <Flex flexWrap='wrap' justifyContent='center' alignItems='center' m='10'>
-    <Image src={imageUrl} width={500} height={300} alt='banner'/>
+    <Image src={imageUrl} width={500} height={300} style={height} alt='banner'/>
     <Box p={'5'}>
       <Text color='gray.500' fontSize='sm' fontWeight='medium'>{ purpose }</Text>
       <Text fontSize='3x1' fontWeight='bold'>{ title1 }<br />{ title2 }</Text>
@@ -57,7 +61,9 @@ export default function Home({ propertyForSale, propertyForRent }: {propertyForS
         linkName='/search?purpose=for-sale'
         imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008'
       />
+      <Flex flexWrap='wrap'>
         {propertyForSale.map((property) => <Property property={property} key={property.id}/>)}
+      </Flex>
     </Box>
   )
 }

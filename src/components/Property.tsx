@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 import DefaultImage from '../../public/images/house.jpg';
 
-type property = {
+interface ICard {
   coverPhoto: string,
   price: string,
   rentFrequency: string,
@@ -20,13 +20,17 @@ type property = {
   agency: string,
   isVerified: boolean,
   externalId: string,
+} 
+
+const height = {
+  height: 260,
 }
 
 const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalId}}) => (
   <Link href={`/property/${externalId}`} passHref>
     <Flex flexWrap='wrap' w='420px' p='5' paddingTop='0' justifyContent='flex-start' cursor='pointer'>
       <Box>
-        <Image src={coverPhoto ? coverPhoto.url : DefaultImage} width={400} height={260} alt='house'></Image>
+        <Image src={coverPhoto ? coverPhoto.url : DefaultImage} width={400} height={260} style={height} alt='house'></Image>
       </Box>
       <Box w='full'>
         <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
