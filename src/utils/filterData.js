@@ -16,7 +16,7 @@ export const filterData = [
       ],
       placeholder: 'Rent Frequency',
       queryName: 'rentFrequency',
-    },
+    }, 
     {
       items: [
         { name: '10,000', value: '10000' },
