@@ -3,8 +3,21 @@ import Image from 'next/image';
 import { Flex, Box, Text, Button } from '@chakra-ui/react';
 
 import { baseUrl, fetchApi } from '../utils/fetchApi';
+import Property from '@/components/Property';
 
-const Banner = ({ imageUrl, purpose, title1, title2, desc1, desc2, linkName, buttonText }: { imageUrl: any; purpose: any; title1: any; title2: any; desc1: any; desc2: any; linkName: any; buttonText: any; }) => (
+/* const cardInfo: [string] = [imageUrl, purpose, title1, title2, desc1, desc2, linkName, buttonText]; */
+interface TProps {
+  imageUrl: string,
+  purpose: string,
+  title1: string,
+  title2: string,
+  desc1: string,
+  desc2: string,
+  linkName: string,
+  buttonText: string,
+}
+
+const Banner = ({ imageUrl, purpose, title1, title2, desc1, desc2, linkName, buttonText }: TProps) => (
   <Flex flexWrap='wrap' justifyContent='center' alignItems='center' m='10'>
     <Image src={imageUrl} width={500} height={300} alt='banner'/>
     <Box p={'5'}>
@@ -19,10 +32,7 @@ const Banner = ({ imageUrl, purpose, title1, title2, desc1, desc2, linkName, but
 )
 
 export default function Home({ propertyForSale, propertyForRent }: {propertyForSale: any; propertyForRent: any}) {
-  console.log(propertyForSale, propertyForRent);
-
   return (
-    <>
     <Box>
       <Banner 
         purpose='RENT A HOME'
@@ -49,7 +59,6 @@ export default function Home({ propertyForSale, propertyForRent }: {propertyForS
       />
         {propertyForSale.map((property) => <Property property={property} key={property.id}/>)}
     </Box>
-    </>
   )
 }
 
