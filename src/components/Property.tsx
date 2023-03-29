@@ -8,7 +8,6 @@ import millify from 'millify';
 import Link from 'next/link';
 
 import DefaultImage from '../../public/images/house.jpg';
-
 interface ICard {
   coverPhoto: string,
   price: string,
@@ -20,6 +19,7 @@ interface ICard {
   agency: string,
   isVerified: boolean,
   externalID: string,
+  /* property: React.ReactNode */
 } 
 
 const height = {

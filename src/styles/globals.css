@@ -14,12 +14,18 @@ body {
   overflow-x: hidden;
 }
 
-body {
-
-}
-
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.react-horizontal-scrolling-menu--inner-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  display: flex;
+  overflow: overlay;
 }
 

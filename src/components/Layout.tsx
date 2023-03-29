@@ -5,7 +5,11 @@ import { Box } from '@chakra-ui/react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-const Layout = ({children}) => {
+export interface StandardComponentProps {
+  children: React.ReactNode
+}
+
+const Layout = ({children}: StandardComponentProps) => {
   return (
     <>
       <Head>
